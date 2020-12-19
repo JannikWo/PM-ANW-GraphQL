@@ -1,24 +1,176 @@
 {
-    "projects":[
+    "userID": 1,
+    "projects": [
         {
             "id": 0,
             "name": "life",
-            "description": "get born, do stuff, die"
+            "description": "get born, do stuff, die",
+            "tags": [
+                "nice"
+            ],
+            "parentprojectID": 0
         },
         {
             "id": 1,
             "name": "work",
-            "description": "do things, earn money"
+            "description": "do things, earn money",
+            "parentprojectID": 0,
+            "tags": [
+                "work"
+            ]
         },
         {
             "id": 2,
             "name": "second project",
-            "description": "relax"
+            "description": "relax",
+            "parentprojectID": 0,
+            "tags": [
+                "free time"
+            ]
         },
         {
             "id": 3,
             "name": "graphql",
-            "description": "learn graphql"
+            "description": "learn graphql",
+            "parentprojectID": 0,
+            "tags": [
+                "coding"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "mollit",
+            "description": "Deserunt velit ullamco aliqua dolore deserunt sunt.",
+            "tags": [
+                "coding"
+            ],
+            "parentprojectID": 13
+        },
+        {
+            "id": 5,
+            "name": "eiusmod",
+            "description": "Aliqua anim ullamco nisi nulla quis ipsum et.",
+            "tags": [
+                "important"
+            ],
+            "parentprojectID": 3
+        },
+        {
+            "id": 6,
+            "name": "adipisicing",
+            "description": "Ea eu cillum aliqua dolore non dolore ipsum.",
+            "tags": [
+                "coding"
+            ],
+            "parentprojectID": 11
+        },
+        {
+            "id": 7,
+            "name": "do",
+            "description": "Nisi veniam aliqua consectetur laborum nisi sunt labore tempor non voluptate officia ex pariatur proident.",
+            "tags": [
+                "coding"
+            ],
+            "parentprojectID": 0
+        },
+        {
+            "id": 8,
+            "name": "cillum",
+            "description": "Nisi irure est Lorem enim duis pariatur sint culpa occaecat.",
+            "tags": [
+                "coding"
+            ],
+            "parentprojectID": 3
+        },
+        {
+            "id": 9,
+            "name": "duis",
+            "description": "Qui aute labore exercitation quis velit aliquip irure do esse nulla laborum pariatur cupidatat ea.",
+            "tags": [
+                "uni"
+            ],
+            "parentprojectID": 2
+        },
+        {
+            "id": 10,
+            "name": "voluptate",
+            "description": "Elit dolore adipisicing pariatur tempor in cupidatat Lorem nostrud veniam pariatur velit nostrud mollit et.",
+            "tags": [
+                "important"
+            ],
+            "parentprojectID": 1
+        },
+        {
+            "id": 11,
+            "name": "mollit",
+            "description": "Enim ea est id laboris eu id magna laborum aliquip.",
+            "tags": [
+                "uni"
+            ],
+            "parentprojectID": 5
+        },
+        {
+            "id": 12,
+            "name": "deserunt",
+            "description": "Consequat ea id aute nostrud in eu id nostrud consectetur esse ut excepteur cupidatat.",
+            "tags": [
+                "uni"
+            ],
+            "parentprojectID": 0
+        },
+        {
+            "id": 13,
+            "name": "pariatur",
+            "description": "Ut voluptate officia et non.",
+            "tags": [
+                "important"
+            ],
+            "parentprojectID": 3
+        },
+        {
+            "id": 14,
+            "name": "consequat",
+            "description": "Minim exercitation reprehenderit nisi mollit irure.",
+            "tags": [
+                "important"
+            ],
+            "parentprojectID": 11
+        },
+        {
+            "id": 15,
+            "name": "adipisicing",
+            "description": "Nostrud ex Lorem tempor et esse ad nostrud minim culpa quis.",
+            "tags": [
+                "coding"
+            ],
+            "parentprojectID": 9
+        },
+        {
+            "id": 16,
+            "name": "deserunt",
+            "description": "Consectetur laborum dolore reprehenderit cupidatat anim tempor mollit.",
+            "tags": [
+                "coding"
+            ],
+            "parentprojectID": 1
+        },
+        {
+            "id": 17,
+            "name": "velit",
+            "description": "Enim eiusmod et fugiat irure nisi labore ea amet.",
+            "tags": [
+                "coding"
+            ],
+            "parentprojectID": 9
+        },
+        {
+            "id": 18,
+            "name": "enim",
+            "description": "Irure sunt cupidatat voluptate ea magna anim officia cillum et consequat.",
+            "tags": [
+                "coding"
+            ],
+            "parentprojectID": 10
         }
     ]
 }
