@@ -29,7 +29,7 @@ const projectDB = sequelize.define('project', {
     allowNull: false
   },
   tags: {
-    type: DataTypes.ARRAY(DataTypes.STRING),
+    type: DataTypes.JSON,
     allowNull: false
   }
 
