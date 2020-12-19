@@ -1,0 +1,24 @@
+{
+    "projects":[
+        {
+            "id": 0,
+            "name": "life",
+            "description": "get born, do stuff, die"
+        },
+        {
+            "id": 1,
+            "name": "work",
+            "description": "do things, earn money"
+        },
+        {
+            "id": 2,
+            "name": "second project",
+            "description": "relax"
+        },
+        {
+            "id": 3,
+            "name": "graphql",
+            "description": "learn graphql"
+        }
+    ]
+}
