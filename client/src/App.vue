@@ -1,52 +1,59 @@
 <template>
   <v-app>
-    <p>{{ hellos.hello }} wrol</p>
-    <!-- <Project :project="rootProject"></Project> -->
-    <ApolloQuery
-    query="gql => gql`
-      query MyHelloQuery {
-        hello
-      }
-    `"
-  >
-    <!-- TODO -->
-  </ApolloQuery>
+    <p>{{ hellow }} wrol</p>
+
+    <Project :project="rootProject"></Project>
   </v-app>
 </template>
 
 <script>
-//import { ref } from "vue";
-//import Project from "./components/Project.vue";
-import { useQuery } from "@vue/apollo-composable";
-import { project } from "./queries"
-// import gql from "graphql-tag";
-
-// //export default function () {
-// // QUERY
-// const project = gql`
-// {
-//     hello
-// }
-// `;
+//import {  } from "vue";
+import Project from "./components/Project.vue";
+import { useQuery, useResult } from "@vue/apollo-composable";
+import { project, hello } from "./queries";
+//import gql from "graphql-tag";
+//import { ref, watch } from "@vue/composition-api";
 
 export default {
   name: "App",
   setup() {
-    const { result, loading, error } = useQuery(project);
-    //const hello = ref(result);
-    console.log("result")
-    console.log(result)
+    function doQuery(query) {
+      const { result, onError } = useQuery(query);
+      onError((err) => {
+        console.log("apollo query error:")
+        console.log(err);
+      });
+      return result;
+    }
+    //const r = doQuery(project);
+
+    // const hay = ref({ name: "asd" });
+    // onResult(() => {
+    //   console.log("HAY");
+    //   hay.value = result;
+    //   console.log(result.value);
+    // });
+    // //const hello = ref(result);
+    // console.log("result");
+    // console.log(result);
+    // console.log(result2);
+    // console.log(error2);
+
+    // watch(result2.value, (value) => {
+    //   console.log(value);
+    // });
+    console.log(hello)
+    const rootProject = useResult(doQuery(project), { name: "root project" });
+    const hellow = useResult(doQuery(hello), { hello: "hello darkness" });
+  
     return {
-      hellos: result,
-      loading,
-      error,
-      rootProject: {name: "asd"}
+      hellow,
+      rootProject: rootProject, //{ name: "as" },
     };
   },
   components: {
-    //Project,
+    Project,
   },
-
 };
 </script>
 
