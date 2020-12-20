@@ -1,11 +1,18 @@
 var { buildSchema } = require('graphql');
 var data = require('./data.json');
+import {allprojects} from "./server"
+
 
 var schema = buildSchema(`
   type Query {
     hello: String
     projects: [Project]
     project(id: Int!): Project
+    newid: Int!
+  }
+
+  type Mutation {
+    newproject(parentID: Int!): Project
   }
 
   type User {
@@ -38,7 +45,7 @@ class Project {
     }
 
     subprojects() {
-        return data.projects.filter(p => {
+        return allprojects.filter(p => {
             return (p.parentprojectID == this.id)
         })
     }

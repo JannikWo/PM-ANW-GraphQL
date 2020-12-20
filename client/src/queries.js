@@ -9,9 +9,11 @@ const hello = gql`
 `;
 
 const project = gql`
-query pr {
-    ProjectByID: project(id: 0) {
+query pr ($id: Int!) {
+    ProjectByID: project(id: $id) {
+        id
         name
+        parentprojectID
         subprojects {
             id
             name
@@ -20,15 +22,19 @@ query pr {
 }
 `;
 
-export {hello, project}
-// #   query project {
-//     #     project(id: 1) {
-//     #         name
-//     #     }
-//     #   }
+const NEWID = gql`query newid {
+    newid 
+}`;
 
-//return {project}
+const NEWPROJECT = gql`
+    mutation sendnewproject ($parentID: Int!) {
+    CreateNewProject: newproject(parentID: $parentID) {
+      id
+    }
+  }`
+//   // Parameters
+//   variables: {
 
-//}
+//   },
 
-//export {project}
+export { hello, project, NEWID, NEWPROJECT }

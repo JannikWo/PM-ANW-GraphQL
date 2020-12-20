@@ -70,6 +70,8 @@ data.projects.forEach(p => {
 
 
 
+
+
 var root = {
   hello: () => {
     return 'Hello world!';
@@ -81,7 +83,18 @@ var root = {
     return allprojects.find(project => {
       return project.id == id;
     });
+  },
+  newid: () => {
+    return allprojects.reduce((prev, current) => (prev.id > current.id) ? prev : current).id;
+  },
+  newproject: ({parentID}) => {
+    const nid = allprojects.reduce((prev, current) => (prev.id > current.id) ? prev : current).id + 1;
+    const np = new Project(nid, "neues Projekt", "grat descr", ["nice"], parentID)
+    allprojects.push(np);
+    console.log(allprojects)
+    return np;
   }
+
 };
 
 var app = express();
