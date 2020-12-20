@@ -1,4 +1,5 @@
 var express = require('express');
+const cors = require('cors')
 var { graphqlHTTP } = require('express-graphql');
 var data = require('./data.json');
 const { schema, Project } = require('./schema');
@@ -84,10 +85,14 @@ var root = {
 };
 
 var app = express();
-app.use('/graphql', graphqlHTTP({
+
+//important order
+app.use(cors()) // FIRST!
+app.use('/graphql', graphqlHTTP({// SECOND!
   schema: schema,
   rootValue: root,
   graphiql: true,
 }));
+
 app.listen(4000);
 console.log('Running a GraphQL API server at http://localhost:4000/graphql');
